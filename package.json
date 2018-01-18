@@ -1,6 +1,6 @@
 {
   "name": "camel-dot-prop-immutable",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "dot-prop-immutable w/ check for flattened props",
   "main": "dist/index.js",
   "scripts": {
