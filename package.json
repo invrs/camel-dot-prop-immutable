@@ -1,0 +1,40 @@
+{
+  "name": "camel-dot-prop-immutable",
+  "version": "0.0.1",
+  "description": "dot-prop-immutable w/ check for flattened props",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "webpack",
+    "prepublishOnly": "npm run build",
+    "start": "doctoc --notitle README.md",
+    "test": "jest test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/invrs/camel-dot-prop-immutable.git"
+  },
+  "keywords": [
+    "immutable",
+    "object",
+    "merge"
+  ],
+  "author": "Winton Welsh <winton@cyclo.ps>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/invrs/camel-dot-prop-immutable/issues"
+  },
+  "homepage": "https://github.com/invrs/camel-dot-prop-immutable#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-node6": "^11.0.0",
+    "doctoc": "^1.3.0",
+    "jest": "^22.0.4",
+    "webpack": "^3.10.0"
+  },
+  "dependencies": {
+    "dot-prop-immutable": "^1.4.0"
+  }
+}
