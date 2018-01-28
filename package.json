@@ -1,7 +1,8 @@
 {
   "name": "camel-dot-prop-immutable",
   "version": "1.1.0",
-  "description": "dot-prop-immutable w/ check for flattened props",
+  "description":
+    "dot-prop-immutable w/ check for flattened props",
   "main": "dist/index.js",
   "scripts": {
     "build": "webpack",
@@ -30,19 +31,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/invrs/camel-dot-prop-immutable.git"
+    "url":
+      "git+ssh://git@github.com/invrs/camel-dot-prop-immutable.git"
   },
-  "keywords": [
-    "immutable",
-    "object",
-    "merge"
-  ],
+  "keywords": ["immutable", "object", "merge"],
   "author": "Winton Welsh <winton@cyclo.ps>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/invrs/camel-dot-prop-immutable/issues"
+    "url":
+      "https://github.com/invrs/camel-dot-prop-immutable/issues"
   },
-  "homepage": "https://github.com/invrs/camel-dot-prop-immutable#readme",
+  "homepage":
+    "https://github.com/invrs/camel-dot-prop-immutable#readme",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -53,7 +53,7 @@
     "eslint": "^4.16.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-prettier": "^2.5.0",
-    "husky": "^0.14.3",
+    "husky": "^0.15.0-rc.3",
     "jest": "^22.0.4",
     "lint-staged": "^6.1.0",
     "prettier": "^1.10.2",

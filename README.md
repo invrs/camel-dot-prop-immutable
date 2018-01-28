@@ -5,12 +5,15 @@ This extension to [dot-prop-immutable](/debitoor/dot-prop-immutable) allows `foo
 ```js
 import dot from "camel-dot-prop-immutable"
 
-dot.get({foo: {bar: { buzz: 'unicorn'}}}, 'foo.bar.buzz')
+dot.get(
+  { foo: { bar: { buzz: "unicorn" } } },
+  "foo.bar.buzz"
+)
 //=> 'unicorn'
 
-dot.get({fooBar: { buzz: 'unicorn'}}, 'foo.bar.buzz')
+dot.get({ fooBar: { buzz: "unicorn" } }, "foo.bar.buzz")
 //=> 'unicorn'
 
-dot.get({fooBarBuzz: 'unicorn'}, 'foo.bar.buzz')
+dot.get({ fooBarBuzz: "unicorn" }, "foo.bar.buzz")
 //=> 'unicorn'
 ```
