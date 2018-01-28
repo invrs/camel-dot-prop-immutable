@@ -1,31 +1,29 @@
-var path = require('path')
+var path = require("path")
 
 module.exports = {
-  entry: path.join(__dirname, 'lib/index.js'),
+  entry: path.join(__dirname, "lib/index.js"),
+  externals: "dot-prop-immutable",
   module: {
     rules: [
       {
         test: /\.js$/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
-            "presets": [
-              "node6"
-            ],
-            "plugins": [
+            plugins: [
               "transform-async-to-generator",
-              "transform-object-rest-spread"
-            ]
-          }
-        }
-      }
-    ]
+              "transform-object-rest-spread",
+            ],
+            presets: ["node6"],
+          },
+        },
+      },
+    ],
   },
   output: {
-    path: path.join(__dirname, 'dist'),
-    filename: 'index.js',
-    libraryTarget: 'commonjs'
+    filename: "index.js",
+    libraryTarget: "commonjs",
+    path: path.join(__dirname, "dist"),
   },
-  target: 'node',
-  externals: 'dot-prop-immutable'
+  target: "node",
 }
