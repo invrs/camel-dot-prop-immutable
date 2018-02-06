@@ -1,6 +1,14 @@
 # camel-dot-prop-immutable
 
-This extension to [dot-prop-immutable](/debitoor/dot-prop-immutable) allows `foo.bar.buzz` to match `{ foo: { barBuzz } }` and `{ fooBar: { buzz } }`.
+This extension to [dot-prop-immutable](/debitoor/dot-prop-immutable) adds fuzzy matching.
+
+| Props          | Matches                      | Type             |
+| -------------- | ---------------------------- | ---------------- |
+| `foo.bar.buzz` | `{ foo: { bar: { buzz } } }` | Default behavior |
+| `foo.bar.buzz` | `{ foo: { barBuzz } }`       | Collapse right   |
+| `foo.bar.buzz` | `{ fooBar: { buzz } }`       | Collapse left    |
+
+### Example
 
 ```js
 import dot from "camel-dot-prop-immutable"
