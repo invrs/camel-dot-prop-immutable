@@ -1,4 +1,4 @@
-import dot from "../lib"
+import dot from "../dist"
 
 test("get", () => {
   expect(
