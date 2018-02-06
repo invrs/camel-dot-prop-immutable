@@ -15,6 +15,10 @@ test("get", () => {
   expect(
     dot.get({ fooBarBuzz: "unicorn" }, "foo.bar.buzz")
   ).toBe("unicorn")
+
+  expect(
+    dot.get({ foo: { barBuzz: "unicorn" } }, "foo.bar.buzz")
+  ).toBe("unicorn")
 })
 
 test("set", () => {
@@ -29,6 +33,12 @@ test("set", () => {
   expect(dot.set({ fooBar: "a" }, "foo.bar", "b")).toEqual({
     fooBar: "b",
   })
+
+  expect(
+    dot.set({ foo: { barBuzz: "a" } }, "foo.bar.buzz", "b")
+  ).toEqual({
+    foo: { barBuzz: "b" },
+  })
 })
 
 test("delete", () => {
@@ -37,6 +47,10 @@ test("delete", () => {
   ).toEqual({ foo: {} })
 
   expect(dot.delete({ fooBar: "a" }, "foo.bar")).toEqual({})
+
+  expect(
+    dot.delete({ foo: { barBuzz: "a" } }, "foo.bar.buzz")
+  ).toEqual({ foo: {} })
 })
 
 test("toggle", () => {
@@ -47,6 +61,10 @@ test("toggle", () => {
   expect(dot.toggle({ fooBar: true }, "foo.bar")).toEqual({
     fooBar: false,
   })
+
+  expect(
+    dot.toggle({ foo: { barBuzz: true } }, "foo.bar.buzz")
+  ).toEqual({ foo: { barBuzz: false } })
 })
 
 test("merge", () => {
@@ -61,4 +79,14 @@ test("merge", () => {
       buzz: "b",
     })
   ).toEqual({ fooBar: { bang: "a", buzz: "b" } })
+
+  expect(
+    dot.merge(
+      { foo: { barBang: { buzz: "a" } } },
+      "foo.bar.bang",
+      {
+        buzz: "b",
+      }
+    )
+  ).toEqual({ foo: { barBang: { buzz: "b" } } })
 })
