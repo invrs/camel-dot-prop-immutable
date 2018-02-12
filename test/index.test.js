@@ -19,6 +19,14 @@ test("get", () => {
   expect(
     dot.get({ foo: { barBuzz: "unicorn" } }, "foo.bar.buzz")
   ).toBe("unicorn")
+
+  expect(
+    dot.get({ foo: { barBuzz: "unicorn" } }, [
+      "foo",
+      "bar",
+      "buzz",
+    ])
+  ).toBe("unicorn")
 })
 
 test("set", () => {
@@ -38,6 +46,16 @@ test("set", () => {
     dot.set({ foo: { barBuzz: "a" } }, "foo.bar.buzz", "b")
   ).toEqual({
     foo: { barBuzz: "b" },
+  })
+
+  expect(
+    dot.set(
+      { "foo.fuu": { barBuzz: "a" } },
+      ["foo.fuu", "bar", "buzz"],
+      "b"
+    )
+  ).toEqual({
+    "foo.fuu": { barBuzz: "b" },
   })
 })
 
