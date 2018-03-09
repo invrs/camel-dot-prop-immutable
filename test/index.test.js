@@ -27,6 +27,8 @@ test("get", () => {
       "buzz",
     ])
   ).toBe("unicorn")
+
+  expect(dot.get({ foo: false }, "foo")).toBe(false)
 })
 
 test("set", () => {
