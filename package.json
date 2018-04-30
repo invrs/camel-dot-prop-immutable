@@ -28,28 +28,40 @@
   "homepage":
     "https://github.com/invrs/camel-dot-prop-immutable#readme",
   "devDependencies": {
-    "babel-core": "6",
-    "babel-plugin-transform-async-to-generator": "6",
-    "babel-plugin-transform-object-rest-spread": "6",
-    "babel-preset-node6": "11",
-    "eslint": "4",
+    "babel-cli": "6",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint": "^4.19.1",
     "eslint-config-prettier": "2",
     "eslint-plugin-prettier": "2",
-    "husky": "^0.15.0-rc.3",
-    "jest": "22",
-    "lint-staged": "6",
-    "prettier": "1",
-    "webpack": "3"
+    "husky": "^0.15.0-rc.13",
+    "jest": "^22.4.3",
+    "lint-staged": "^6.1.1",
+    "prettier": "^1.12.1",
+    "webpack": "^3.11.0"
   },
   "dependencies": {
+    "babel-runtime": "^6.26.0",
     "dot-prop-immutable": "^1.4.0"
   },
   "babel": {
-    "presets": ["node6"],
-    "plugins": [
-      "transform-async-to-generator",
-      "transform-object-rest-spread"
-    ]
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current",
+            "uglify": true,
+            "useBuiltIns": true
+          }
+        }
+      ],
+      "stage-0"
+    ],
+    "plugins": ["transform-runtime"]
   },
   "eslintConfig": {
     "env": {
